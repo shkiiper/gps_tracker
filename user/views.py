@@ -4,14 +4,14 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
+from django.views import View
 
-
-from .serializers import UserSerializer
+from .models import Tracking
+from .serializers import UserSerializer, TrackingSerializer
 
 User = get_user_model()
 
 
-# ViewSet для модели User
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -47,3 +47,16 @@ class TokenObtainPairView(APIView):
             return Response(response_data)
         else:
             return Response({'error': 'Invalid credentials'}, status=400)
+
+
+class SaveLocationViewSet(viewsets.ModelViewSet):
+    queryset = Tracking.objects.all()
+    serializer_class = TrackingSerializer
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        user = request.user
+        latitude = request.POST.get('latitude')
+        longitude = request.POST.get('longitude')
+        tracking = Tracking(user=user, latitude=latitude, longitude=longitude)
+        tracking.save()
