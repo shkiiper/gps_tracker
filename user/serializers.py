@@ -23,4 +23,4 @@ class UserSerializer(serializers.ModelSerializer):
 class TrackingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tracking
-        fields = ('user', 'latitude', 'longitude')
+        fields = ('id', 'user', 'latitude', 'longitude')
