@@ -32,8 +32,8 @@ class User(AbstractUser):
 
 class Tracking(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    latitude = models.DecimalField()
-    longitude = models.DecimalField()
+    latitude = models.CharField(max_length=30)
+    longitude = models.CharField(max_length=30)
 
     def __str__(self):
         return self.user.username
