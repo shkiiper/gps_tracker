@@ -10,15 +10,16 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
+    'https://256f-217-29-29-150.ngrok-free.app',
 ]
+ALLOWED_HOSTS = ['426d-212-241-21-31.ngrok-free.app']
+
 
 CORS_ALLOW_HEADERS = [
     'Content-Type',
 ]
 
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
