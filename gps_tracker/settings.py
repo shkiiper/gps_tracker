@@ -6,18 +6,25 @@ SECRET_KEY = 'django-insecure-u&!^9!crdvvw01#_z(%_rwg@kh(bgj0dfyok7e9r!s8otn!2rk
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOW_HEADERS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    'https://256f-217-29-29-150.ngrok-free.app',
+]
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
     'https://256f-217-29-29-150.ngrok-free.app',
 ]
 ALLOWED_HOSTS = ['426d-212-241-21-31.ngrok-free.app']
-
-
-CORS_ALLOW_HEADERS = [
-    'Content-Type',
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
 ]
+
+CORS_ALLOW_HEADERS = ('content-disposition', 'accept-encoding',
+                      'content-type', 'accept', 'origin', 'Authorization')
 
 DEBUG = True
 
