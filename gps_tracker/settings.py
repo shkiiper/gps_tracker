@@ -4,29 +4,55 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-u&!^9!crdvvw01#_z(%_rwg@kh(bgj0dfyok7e9r!s8otn!2rk'
 
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOWED_ORIGINS = [
+#     'http://a30c-212-112-100-27.ngrok-free.app',
+#     'https://a30c-212-112-100-27.ngrok-free.app',
+#     'http://localhost:3000',
+# ]
+# CORS_ORIGIN_WHITELIST = [
+#     'http://a30c-212-112-100-27.ngrok-free.app',
+#     'https://a30c-212-112-100-27.ngrok-free.app',
+#     'http://localhost:3000'
+# ]
+# ALLOWED_HOSTS = ['14a2-212-112-100-27.ngrok-free.app']
+# CORS_ALLOW_METHODS = ['GET', 'OPTIONS']
+# CORS_ALLOW_HEADERS = ['Content-Type']
+#
+# CORS_EXPOSE_HEADERS = [
+#     'content-disposition',
+#     'Authorization',
+# ]
+#
+# DEBUG = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = [
-    'https://256f-217-29-29-150.ngrok-free.app',
-]
-CORS_ORIGIN_WHITELIST = [
-    'https://256f-217-29-29-150.ngrok-free.app',
-]
-ALLOWED_HOSTS = ['426d-212-241-21-31.ngrok-free.app']
 CORS_ALLOW_METHODS = [
+    'OPTIONS',
+    'DELETE',
     'GET',
+    'PATCH',
     'POST',
     'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
 ]
 
-CORS_ALLOW_HEADERS = ('content-disposition', 'accept-encoding',
-                      'content-type', 'accept', 'origin', 'Authorization')
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'https://862b-212-112-100-27.ngrok-free.app',
+    'https://a30c-212-112-100-27.ngrok-free.app'
+]
 
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+]
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+ALLOWED_HOSTS = ['862b-212-112-100-27.ngrok-free.app','localhost', '127.0.0.1', 'a30c-212-112-100-27.ngrok-free.app']
 
 
 # Application definition
